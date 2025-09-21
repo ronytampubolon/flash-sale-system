@@ -1,0 +1,50 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 60
+      arrivalRate: 5
+      rampTo: 50
+      name: "Warm up phase"
+    - duration: 120
+      arrivalRate: 50
+      rampTo: 100
+      name: "Ramp up load"
+    - duration: 180
+      arrivalRate: 100
+      name: "Sustained high load"
+  payload:
+    path: "users.csv"
+    fields:
+      - "email"
+      - "password"
+
+scenarios:
+  - name: "Flash sale purchase flow"
+    flow:
+      # Login
+      - post:
+          url: "/api/auth/login"
+          json:
+            email: "{{ email }}"
+          capture:
+            - json: "$.data.token"
+              as: "userToken"
+
+      # Attempt purchase
+      - post:
+          url: "/api/orders/purchase"
+          headers:
+            Authorization: "Bearer {{ userToken }}"
+          json:
+            productId: "10001"
+            quantity: 1
+          expect:
+            - statusCode: 200
+
+      # Get purchase status
+      - get:
+          url: "/api/orders/purchase/status"
+          headers:
+            Authorization: "Bearer {{ userToken }}"
+          expect:
+            - statusCode: 200
