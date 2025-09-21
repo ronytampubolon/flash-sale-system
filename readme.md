@@ -10,9 +10,11 @@ Contains Flash Sale Platform API and Frontend Application.
 - **Cache**: Redis
 - **Message Queue**: RabbitMQ
 
-## Application Service
-- Frontend: http://localhost:3300
-- Backend API: http://localhost:3000
+## Techstack
+<img src="images/stack.png" alt="Tech stack" />
+
+## Design System
+<img src="images/design-sys.png" alt="Design system" />
 
 ## Installation Steps
 1. Clone the repository:
@@ -30,3 +32,14 @@ Contains Flash Sale Platform API and Frontend Application.
 4. Open Web Application:
    - Frontend: http://localhost:3300
    - Backend API: http://localhost:3000
+
+## Application Service
+- Frontend: http://localhost:3300
+- Backend API: http://localhost:3000
+
+## Stress Test 
+- Artillery: Used for stress testing the backend API.
+    ```bash
+   cd flash-sale-api
+   npm run stress-test
+   ```
