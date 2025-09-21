@@ -1,0 +1,20 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3300:3300"
+    volumes:
+      - ./src:/app/src
+      - ./public:/app/public
+    environment:
+      - VITE_BASE_URL=http://localhost:3000
+      - VITE_PORT=3300
+    networks:
+      - flash-sale-network
+
+networks:
+  flash-sale-network:
+    name: flash-sale-network
+    external: true

@@ -1,0 +1,32 @@
+# Flash Sale API
+flash-sale-api/node_modules/
+flash-sale-api/dist/
+flash-sale-api/coverage/
+flash-sale-api/.env
+flash-sale-api/.env.*
+flash-sale-api/logs/
+flash-sale-api/*.log
+
+# Flash Sale App
+flash-sale-app/node_modules/
+flash-sale-app/dist/
+flash-sale-app/coverage/
+flash-sale-app/.env
+flash-sale-app/.env.*
+flash-sale-app/logs/
+flash-sale-app/*.log
+
+# IDE and Editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

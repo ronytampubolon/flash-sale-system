@@ -1,0 +1,16 @@
+# =========================
+# Node.js / Express
+# =========================
+# compiled output
+/dist
+/node_modules
+/build
+
+*.log                    # Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log
+.nyc_output/
+coverage/
+.nyc_output/
